@@ -1,0 +1,13 @@
+[
+    {   "id":"0",
+        "name": "luvin",
+        "email":"1234@gmail.com",
+        "worker":"developer"
+    },
+    {
+        "id":"1",
+        "name": "irfan",
+        "email":"123@gmail.com",
+        "worker":"databasemanager"
+    }
+]
