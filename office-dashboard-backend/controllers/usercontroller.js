@@ -1,31 +1,11 @@
-data ={};
-data.userDetials = require('../model/userDetilas.json');
+import { User } from '../models/user.js';
 
-const getAllUsers = (req,res)=>{
-    res.json(data.userDetials);
-}
+export const webView = (req, res) => {
+    res.send("hello");
+};
 
-const creatNewuser = (req,res)=>{
-    res.json({
-        'name':req.body.name,
-        'email':req.body.email,
-        'work':req.body.work
-    })
-}
+export const userLog = (req, res) => {
+    // Logic for userLog function
+    res.send("User logged");
+};
 
-const updateUser = (req,res)=>{
-    res.json({
-        'name':req.body.name,
-        'email':req.body.email,
-        'work':req.body.work
-    })
-}
-
-const deletUser = (req,res)=>{
-    res.json({'id':req.body.id})
-  }
- const  getUser = (req,res)=>{
-    res.json({'id':req.body.id})
-  }
-
-module.exports ={ getAllUsers, creatNewuser, updateUser, deletUser, getUser}
