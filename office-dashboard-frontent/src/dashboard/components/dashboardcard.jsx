@@ -1,7 +1,7 @@
 
 const Dashboard_card = ({ teamName, members, teamIcon }) => {
     return (
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg rounded-xl">
+      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg rounded-xl mr-3">
         <div className="flex items-center p-4 border-b border-gray-200">
           <img src={teamIcon} alt={`${teamName} icon`} className="w-8 h-8 mr-3" />
           <h2 className="text-lg font-semibold">{teamName}</h2>
