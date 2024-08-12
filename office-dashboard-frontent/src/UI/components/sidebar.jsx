@@ -37,11 +37,11 @@ export default function Sidebar() {
         {menu.map((index) => (
           <a href={index.path}>
             <div className="bg-white rounded md:px-3 md:mb-10 m-4 flex w-fit items-center active:text-[#ffa520]  hover:text-[#ffa520] ">
-              <div className="md:mr-4 w-12 lg:w-14 lg:px-3">
-                <img src={index.img} />
+              <div className="md:mr-4 w-6 lg:w-14 lg:px-3 f">
+                <img src={index.img}  className="w-6"/>
               </div>
 
-              <h2 className="font-bold text-xl capitalize hidden md:block">
+              <h2 className="font-bold text-md capitalize hidden md:block">
                 {index.title}{" "}
               </h2>
             </div>
