@@ -12,22 +12,26 @@ import Dashboard from "./dashboard";
 function App() {
   return (
     <>
-      {/* <div className='bg-[#232939] flex items-center justify-center h-screen'>
-     <Loginpage/>
-     
-   </div> */}
-      <div className="md:my-3 border-b-2 p-2 mb-4 md:pb-4">
-        <Header />
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-
-      <div className=" flex">
-        <Userinterface />
-        <section className="p-1 lg:p-7   bg-slate-50 w-full">
-          <Content />
-          <Dashboard/>
-          {/* <Categries /> */}
-        </section>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
       </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   );
 }

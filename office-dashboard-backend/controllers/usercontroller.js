@@ -1,31 +1,82 @@
-data ={};
-data.userDetials = require('../model/userDetilas.json');
+import User from '../models/userModel.js';
 
-const getAllUsers = (req,res)=>{
-    res.json(data.userDetials);
-}
 
-const creatNewuser = (req,res)=>{
-    res.json({
-        'name':req.body.name,
-        'email':req.body.email,
-        'work':req.body.work
-    })
-}
+// Create a new user
+export const createUser = async (req, res) => {
+    try {
+        const { username, id_num, phone, email, password, admin } = req.body;
 
-const updateUser = (req,res)=>{
-    res.json({
-        'name':req.body.name,
-        'email':req.body.email,
-        'work':req.body.work
-    })
-}
+        // Create a new user
+        const user = new User({ username, id_num, phone, email, password, admin });
 
-const deletUser = (req,res)=>{
-    res.json({'id':req.body.id})
-  }
- const  getUser = (req,res)=>{
-    res.json({'id':req.body.id})
-  }
+        // Save the user to the database
+        await user.save();
 
-module.exports ={ getAllUsers, creatNewuser, updateUser, deletUser, getUser}
+        res.status(201).json(user);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Get all users
+export const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Get a single user by ID
+export const getUserById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Update a user by ID
+export const updateUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updates = req.body;
+
+        // Find and update the user
+        const user = await User.findByIdAndUpdate(id, updates, { new: true });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// Delete a user by ID
+export const deleteUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // Find and delete the user
+        const user = await User.findByIdAndDelete(id);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.status(204).send();
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
