@@ -5,7 +5,6 @@ import { createTask, getAllTasks, getTasksForUser, updateTask, deleteTask } from
 const router = express.Router();
 
 ///user Login
-
 router.post('/users', createUser);// Create a new user
 router.get('/users', getAllUsers);// Get all users
 router.get('/users/:id', getUserById);// Get a single user by ID

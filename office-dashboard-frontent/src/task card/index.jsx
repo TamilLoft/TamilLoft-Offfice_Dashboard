@@ -12,7 +12,7 @@ const Taskcard = () => {
       'https://randomuser.me/api/portraits/women/44.jpg',
       'https://randomuser.me/api/portraits/men/55.jpg',
     ],
-    completedPercentage: 90,
+    completedPercentage: 10,
     team:"UI/UX designers"
   },
   {
