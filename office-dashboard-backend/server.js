@@ -9,30 +9,35 @@ import { loger } from './middleware/logemodule.js';
 import errorHandlers from './middleware/errorhandler.js';
 import mainRoute from './routes/mainRoute.js';
 
+import connectToDatabase from '../office-dashboard-backend/database/connection.js';
+
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
+// Apply middleware
 app.use(express.json({ limit: '10mb' }));
-app.use(cors());
-app.use(cookieParser());
-app.use(loger); // error catch function
-app.use(pd.json());
-app.use(errorHandlers); // error catch function
 app.use(cors(corsOptions));
+app.use(cookieParser());
+app.use(pd.json());
 app.use(pd.urlencoded({ extended: false }));
 
-// Routes
-app.use(mainRoute);
+// Custom middleware
+app.use(loger);
 
+// Connect to the database and set up routes
+connectToDatabase().then(() => {
+    app.use(mainRoute);
 
+    // Error handling middleware should be placed after the routes
+    app.use(errorHandlers);
 
-
-// Hoster
-app.listen(port, () => {
-    console.log(`Project host ON: http://localhost:${port}`);
+    // Start the server only after the database connection is established
+    app.listen(port, () => {
+        console.log(`Project host ON: http://localhost:${port}`);
+    });
+}).catch(error => {
+    console.error("Failed to connect to the database:", error);
+    process.exit(1); // Exit the process if the database connection fails
 });
-
-
-

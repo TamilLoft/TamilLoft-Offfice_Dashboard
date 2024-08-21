@@ -33,3 +33,15 @@
 21:08:2024	11:49:38	6c4890da-f9fb-447c-b41d-be390003b9e3	GET	undefined	/favicon.ico
 21:08:2024	11:56:34	1c05b67f-d90d-4a14-b1f2-b97ee7b8c740	POST	undefined	/users
 21:08:2024	12:08:21	7d076837-6743-4b08-97f2-87985fbdc8e2	POST	undefined	/users
+21:08:2024	12:25:36	228eed9c-3c19-4925-a972-9872784ac809	POST	undefined	/users
+21:08:2024	12:29:18	649404b8-d35b-4391-8b12-d2356461bb98	GET	undefined	/users
+21:08:2024	12:29:28	44c590ed-6e58-4ea1-908d-4608403eb77c	POST	undefined	/users
+21:08:2024	12:30:04	bac275bc-5eea-43a6-90c1-0f018dfd84cf	POST	undefined	/users
+21:08:2024	12:39:00	dd63740e-f57c-4cd4-8599-5e1fa4e1fe6f	POST	undefined	/users
+21:08:2024	12:39:19	28df0e3d-8c6e-4813-9187-fbffd4ea596b	POST	undefined	/users
+21:08:2024	12:39:37	33f92f8e-3d00-41e8-bb7c-be0e58e054f1	POST	undefined	/users
+21:08:2024	12:42:41	b52f4b1f-3b19-4f81-8722-0e8b510d0f0f	POST	undefined	/users
+21:08:2024	12:50:50	1fa2525a-c686-4689-9525-0a05cbc2bc4d	POST	undefined	/users
+21:08:2024	12:59:43	d2c2c41b-ef2e-467a-8587-03fd791f841a	GET	undefined	/
+21:08:2024	12:59:43	b43d5243-ecff-4e12-9f97-232af8f3b9b9	GET	undefined	/favicon.ico
+21:08:2024	12:59:51	1b3ce2cc-020d-4491-97f0-93144ab6765a	POST	undefined	/users

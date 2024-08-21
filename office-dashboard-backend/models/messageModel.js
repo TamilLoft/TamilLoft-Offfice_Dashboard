@@ -12,4 +12,4 @@ const userSchema = new Schema(
 
 const Message = mongoose.model('Message', userSchema);
 
-export default { Message }; // Export the User model correctly
+export default Message ; // Export the User model correctly

@@ -1,18 +1,19 @@
-const mongodb = require("mongoose");
-const mongoClient = mongodb.MongoClient;
-const url = " mongodb://127.0.0.1:27017/tamilLoft-Dashbord";
-let dataBase;
-const ObjectId = mongodb.ObjectId;
+import mongoose from 'mongoose';
 
-async function getDataBase() {
+const url = "mongodb://127.0.0.1:27017/tamilLoft-Dashboard";
 
-  const client = await mongoClient.connect(url);
-  dataBase = client.db("TamilLoft-Dashboard");
-  if (!dataBase) {
-    console.log("db not connected");
+const connectToDatabase = async () => {
+  try {
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Could not connect to MongoDB", error);
+    throw error;
   }
-  return dataBase;
-}
-module.exports = {
-  getDataBase, ObjectId
 };
+
+export default connectToDatabase;
+
