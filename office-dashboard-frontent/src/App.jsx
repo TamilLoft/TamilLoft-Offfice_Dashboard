@@ -31,7 +31,7 @@ function App() {
       
     },
     {
-      path: "/id:schedule",
+      path: "/schedule:id",
       
     }
   ]);

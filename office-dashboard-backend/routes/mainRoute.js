@@ -4,6 +4,13 @@ import { createMessage, getMessages, deleteMessage } from '../controllers/messag
 import { createTask, getAllTasks, getTasksForUser, updateTask, deleteTask } from '../controllers/taskController.js';///task related
 const router = express.Router();
 
+///default
+router.get('/*',(req , res)=>{
+    res.send("DashBord")
+    
+});
+
+
 ///user Login
 router.post('/users', createUser);// Create a new user
 router.get('/users', getAllUsers);// Get all users
